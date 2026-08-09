@@ -9,11 +9,18 @@ $latestJson = Join-Path $logs 'latest.json'
 $latestMd = Join-Path $logs 'latest.md'
 $researchDir = Join-Path $repo 'research'
 $researchLatest = Join-Path $researchDir 'latest.json'
+$curatedDir = Join-Path $state 'curated'
+$env:GELTEE_CURATED_DATA = Join-Path $curatedDir 'training_candidates.jsonl'
 $counter = Join-Path $state 'step.txt'
-New-Item -ItemType Directory -Force -Path $state, $logs, $researchDir | Out-Null
+New-Item -ItemType Directory -Force -Path $state, $logs, $researchDir, $curatedDir | Out-Null
 
 if (-not (Test-Path -LiteralPath $counter)) { Set-Content -LiteralPath $counter -Value '0' -Encoding ASCII }
 & (Join-Path $repo 'publish-logs.ps1') -Initial
+# Populate the local curated queue before the first candidate step, so Gelqeen
+# remains useful while Codex is unavailable. Failures leave the guarded loop
+# running on the original local corpus.
+& $python (Join-Path $repo 'auto_intake.py') --policy (Join-Path $repo 'research_policy.json') --out-dir $curatedDir
+if ($LASTEXITCODE -ne 0) { Write-Warning 'Initial automatic data intake failed; continuing with the guarded local-only trainer.' }
 
 while (-not (Test-Path -LiteralPath (Join-Path $repo 'STOP'))) {
     $step = [int](Get-Content -LiteralPath $counter -Raw) + 1
@@ -42,6 +49,8 @@ The fixed 100-case gate is never used for training. A candidate is promoted only
         # Gelqeen discovery is metadata-only. It cannot download or train on web data.
         & $python (Join-Path $repo 'research_sources.py') --status $latestJson --policy (Join-Path $repo 'research_policy.json') --result $researchLatest
         if ($LASTEXITCODE -ne 0) { Write-Warning 'Research discovery failed; continuing with the guarded local-only trainer.' }
+        & $python (Join-Path $repo 'auto_intake.py') --policy (Join-Path $repo 'research_policy.json') --out-dir $curatedDir
+        if ($LASTEXITCODE -ne 0) { Write-Warning 'Automatic data intake failed; continuing with the guarded local-only trainer.' }
         & (Join-Path $repo 'publish-logs.ps1') -Step $step
     }
 }

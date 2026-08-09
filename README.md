@@ -16,4 +16,4 @@ Stop the loop by creating `STOP` in this repository or by terminating the proces
 
 ## Gelqeen source discovery
 
-Every ten guarded learning steps, `research_sources.py` reads only the failed gate categories and searches the Hugging Face dataset catalogue for metadata. It keeps only results whose declared licence is in `research_policy.json`, then records a review queue under `research/latest.json`. It never downloads records, modifies the allowlist, or trains on discovered sources. This separation prevents an apparent weakness from becoming an unlicensed or contaminated training-data change.
+Every ten guarded learning steps, `research_sources.py` reads only the failed gate categories and searches the Hugging Face dataset catalogue for metadata. `auto_intake.py` then downloads a small sample only from the pre-pinned, permitted sources in `research_policy.json`; it removes low-quality and duplicate rows and stores them locally. The next candidate step blends at most 8 curated examples into 32 examples, and the existing gate/holdout promotion rule remains mandatory. Downloaded data and checkpoints are never published to this repository.

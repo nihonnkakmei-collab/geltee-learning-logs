@@ -30,6 +30,7 @@ TOKENIZER = configured_path("GELTEE_TOKENIZER")
 GATE_SOURCE = GELTEE / "train_v227_v171_small_vector_search.py"
 TRAIN_DATA = configured_path("GELTEE_TRAIN_DATA")
 HOLDOUT_DATA = configured_path("GELTEE_HOLDOUT_DATA")
+CURATED_DATA = Path(os.environ["GELTEE_CURATED_DATA"]) if os.environ.get("GELTEE_CURATED_DATA") else None
 
 
 def load_gate_pairs() -> dict[str, list[tuple[str, str]]]:
@@ -202,6 +203,10 @@ def main() -> int:
     gates = load_gate_pairs()
     gate_pairs = {pair for category in gates.values() for pair in category}
     train_pairs = sample_pairs(TRAIN_DATA, 1000000 + args.step, 32, gate_pairs)
+    # A small, automatically curated slice is blended only after the normal corpus.
+    # Missing or empty intake data never blocks the local-only loop.
+    if CURATED_DATA and CURATED_DATA.exists() and CURATED_DATA.stat().st_size:
+        train_pairs = train_pairs[:24] + sample_pairs(CURATED_DATA, 3000000 + args.step, 8, gate_pairs)
     # Fixed seed: this is a true holdout metric, not a moving target.
     holdout_pairs = sample_pairs(HOLDOUT_DATA, 2000000, 32, gate_pairs)
 
@@ -276,6 +281,7 @@ def main() -> int:
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
         "source_model": "geltee_v227_v171_small_vector_search_model.pt",
         "training_data": "geltee_v02_100m_mix",
+        "curated_data_used": bool(CURATED_DATA and CURATED_DATA.exists() and CURATED_DATA.stat().st_size),
         "holdout_data": "v65_broad_stable_large",
         "gate_in_training": False,
         "baseline": {"gate": baseline_gate, "holdout_nll": baseline_holdout},
