@@ -1,10 +1,14 @@
-# Latest Geltee learning status
+﻿# Latest Geltee learning status
 
-- Step: 1012
-- Fixed gate before / after: 98/100 → 98/100
-- Independent holdout answer NLL before / after: 2.977525 → 2.976315
-- Gate data used for training: no
+- Step: 1020
+- Updated: 2026-08-09T22:17:10+0900
+- Baseline gate: 98/100
+- Candidate gate: 98/100
+- Baseline holdout NLL: 2.9775251712835598
+- Candidate holdout NLL: 2.975989869377713
 - Decision: rejected
-- Reason: holdout improvement was below the required 0.3%; champion remains the immutable v227 baseline
-- Rollback: previous 99/100 overfit champion archived locally; original v227 baseline retained locally
-- GPT-1 exceeded: not established
+- Learning rate: 5E-08
+- Mean loss: 5.6126731019467115
+- GPT-1 exceeded: not yet established
+
+The fixed 100-case gate is never used for training. A candidate is promoted only when it preserves gate performance and improves an independent holdout set.
