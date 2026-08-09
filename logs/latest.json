@@ -1,6 +1,6 @@
 {
-  "step": 380,
-  "timestamp": "2026-08-09T18:56:20+0900",
+  "step": 390,
+  "timestamp": "2026-08-09T18:58:58+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
@@ -16,18 +16,13 @@
         "fails": []
       },
       "python": {
-        "ok": 6,
+        "ok": 7,
         "total": 8,
         "fails": [
           {
             "prompt": "PythonでHelloを表示して",
             "expected": "print(\"Hello\")",
-            "actual": "print(False)"
-          },
-          {
-            "prompt": "Pythonでtrueを表示して",
-            "expected": "print(True)",
-            "actual": "print(\"Oood\")"
+            "actual": "print(Telso)"
           }
         ]
       },
@@ -52,9 +47,15 @@
         "fails": []
       },
       "logic": {
-        "ok": 6,
+        "ok": 5,
         "total": 6,
-        "fails": []
+        "fails": [
+          {
+            "prompt": "数字を小さい順に並べて: 3,1,2",
+            "expected": "1,2,3",
+            "actual": "1,3,4"
+          }
+        ]
       },
       "math": {
         "ok": 10,
@@ -68,17 +69,12 @@
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(\"Oood\")"
+            "actual": "print(True)"
           },
           {
             "prompt": "Pythonで空リストを返して",
             "expected": "return []",
-            "actual": "return True"
-          },
-          {
-            "prompt": "朝の挨拶",
-            "expected": "おはようございます。",
-            "actual": "状はようございます。"
+            "actual": "items = []"
           },
           {
             "prompt": "5は2より大きい？",
@@ -89,6 +85,11 @@
             "prompt": "数字を小さい順に並べて: 9,7,8",
             "expected": "7,8,9",
             "actual": "7,8"
+          },
+          {
+            "prompt": "JSONでitems空配列",
+            "expected": "{\"items\":[]}",
+            "actual": "[]items = []"
           }
         ]
       }
@@ -96,8 +97,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 124,
-    "mean_loss": 0.09298404838259723
+    "updates": 112,
+    "mean_loss": 0.08736220689010565
   },
   "promoted": false,
   "gpt1_claim": false,
