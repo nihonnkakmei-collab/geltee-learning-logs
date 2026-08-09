@@ -1,6 +1,7 @@
 $ErrorActionPreference = 'Stop'
 $repo = $PSScriptRoot
 $python = 'C:\Users\matsu\AppData\Local\Programs\Python\Python312\python.exe'
+$env:PYTHONPATH = 'C:\GelteeLocal\.venv\Lib\site-packages'
 $state = 'C:\Users\matsu\Documents\Codex\2026-08-08\rru\work\geltee-infinite-state'
 $logs = Join-Path $repo 'logs'
 $latestJson = Join-Path $logs 'latest.json'
@@ -34,4 +35,3 @@ The GPT-1 statement requires a shared benchmark against a reproduced baseline; t
     Set-Content -LiteralPath $latestMd -Value $md -Encoding UTF8
     if (($step % 10) -eq 0) { & (Join-Path $repo 'publish-logs.ps1') -Step $step }
 }
-

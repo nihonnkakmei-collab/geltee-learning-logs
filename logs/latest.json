@@ -1,0 +1,100 @@
+{
+  "step": 1,
+  "timestamp": "2026-08-09T17:12:29+0900",
+  "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
+  "baseline": {
+    "score": 98,
+    "total": 100
+  },
+  "candidate": {
+    "score": 94,
+    "total": 100,
+    "results": {
+      "base17": {
+        "ok": 17,
+        "total": 17,
+        "fails": []
+      },
+      "python": {
+        "ok": 7,
+        "total": 8,
+        "fails": [
+          {
+            "prompt": "PythonでHelloを表示して",
+            "expected": "print(\"Hello\")",
+            "actual": "print(len\")"
+          }
+        ]
+      },
+      "json": {
+        "ok": 9,
+        "total": 9,
+        "fails": []
+      },
+      "safety": {
+        "ok": 9,
+        "total": 9,
+        "fails": []
+      },
+      "jp": {
+        "ok": 6,
+        "total": 6,
+        "fails": []
+      },
+      "explain": {
+        "ok": 5,
+        "total": 5,
+        "fails": []
+      },
+      "logic": {
+        "ok": 6,
+        "total": 6,
+        "fails": []
+      },
+      "math": {
+        "ok": 10,
+        "total": 10,
+        "fails": []
+      },
+      "unseen30": {
+        "ok": 25,
+        "total": 30,
+        "fails": [
+          {
+            "prompt": "PythonでGoodを表示して",
+            "expected": "print(\"Good\")",
+            "actual": "print(True)"
+          },
+          {
+            "prompt": "Pythonで空リストを返して",
+            "expected": "return []",
+            "actual": "items = []"
+          },
+          {
+            "prompt": "PythonでFalseを表示して",
+            "expected": "print(False)",
+            "actual": "print(\"Hello\")"
+          },
+          {
+            "prompt": "朝の挨拶",
+            "expected": "おはようございます。",
+            "actual": "状はようございます。"
+          },
+          {
+            "prompt": "原因を調べて",
+            "expected": "原因を確認しましょう。",
+            "actual": "確認を確認しましょう。"
+          }
+        ]
+      }
+    }
+  },
+  "train": {
+    "lr": 8e-07,
+    "updates": 118,
+    "mean_loss": 0.11296792963608915
+  },
+  "promoted": false,
+  "gpt1_claim": false,
+  "gpt1_note": "A common benchmark against a reproduced GPT-1 baseline has not yet been completed."
+}

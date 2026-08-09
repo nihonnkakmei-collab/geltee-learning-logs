@@ -30,7 +30,7 @@ GATE_SOURCE = GELTEE / "train_v227_v171_small_vector_search.py"
 
 
 def load_gate_pairs() -> dict[str, list[tuple[str, str]]]:
-    tree = ast.parse(GATE_SOURCE.read_text(encoding="utf-8"))
+    tree = ast.parse(GATE_SOURCE.read_text(encoding="utf-8-sig"))
     wanted = {"base17", "python", "json_ascii", "safety", "jp", "explain", "logic", "math", "unseen", "gates"}
     nodes = []
     for node in tree.body:
@@ -155,7 +155,7 @@ def main() -> int:
     train_info = train_candidate(candidate, tok, gates, cfg, args.step)
     candidate_eval = evaluate(candidate, tok, gates, cfg.block_size)
 
-    promoted = candidate_eval["score"] >= baseline["score"]
+    promoted = candidate_eval["score"] > baseline["score"]
     if promoted:
         torch.save(
             {
@@ -187,4 +187,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
