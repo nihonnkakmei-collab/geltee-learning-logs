@@ -1,12 +1,10 @@
-﻿# Latest Geltee learning status
+# Latest Geltee learning status
 
-- Step: 1010
-- Updated: 2026-08-09T21:43:12+0900
-- Baseline gate: 99/100
-- Candidate gate: 94/100
-- Promoted: False
-- Learning rate: 3.5E-06
-- Mean loss: 0.08747148233054201
-- GPT-1 exceeded: not yet established
-
-The GPT-1 statement requires a shared benchmark against a reproduced baseline; the Geltee gate alone is not used as proof.
+- Step: 1012
+- Fixed gate before / after: 98/100 → 98/100
+- Independent holdout answer NLL before / after: 2.977525 → 2.976315
+- Gate data used for training: no
+- Decision: rejected
+- Reason: holdout improvement was below the required 0.3%; champion remains the immutable v227 baseline
+- Rollback: previous 99/100 overfit champion archived locally; original v227 baseline retained locally
+- GPT-1 exceeded: not established

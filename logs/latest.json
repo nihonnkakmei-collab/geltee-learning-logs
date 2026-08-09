@@ -1,100 +1,147 @@
 {
-  "step": 1010,
-  "timestamp": "2026-08-09T21:43:12+0900",
-  "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
+  "step": 1012,
+  "timestamp": "2026-08-09T21:52:23+0900",
+  "source_model": "geltee_v227_v171_small_vector_search_model.pt",
+  "training_data": "geltee_v02_100m_mix",
+  "holdout_data": "v65_broad_stable_large",
+  "gate_in_training": false,
   "baseline": {
-    "score": 99,
-    "total": 100
+    "gate": {
+      "score": 98,
+      "total": 100,
+      "results": {
+        "base17": {
+          "ok": 17,
+          "total": 17,
+          "fails": []
+        },
+        "python": {
+          "ok": 8,
+          "total": 8,
+          "fails": []
+        },
+        "json": {
+          "ok": 9,
+          "total": 9,
+          "fails": []
+        },
+        "safety": {
+          "ok": 9,
+          "total": 9,
+          "fails": []
+        },
+        "jp": {
+          "ok": 6,
+          "total": 6,
+          "fails": []
+        },
+        "explain": {
+          "ok": 5,
+          "total": 5,
+          "fails": []
+        },
+        "logic": {
+          "ok": 6,
+          "total": 6,
+          "fails": []
+        },
+        "math": {
+          "ok": 10,
+          "total": 10,
+          "fails": []
+        },
+        "unseen30": {
+          "ok": 28,
+          "total": 30,
+          "fails": [
+            {
+              "prompt": "PythonでFalseを表示して",
+              "expected": "print(False)",
+              "actual": "print(\"Hello\")"
+            },
+            {
+              "prompt": "PythonでTrueを返して",
+              "expected": "return True",
+              "actual": "return Frue"
+            }
+          ]
+        }
+      }
+    },
+    "holdout_nll": 2.9775251712835598
   },
   "candidate": {
-    "score": 94,
-    "total": 100,
-    "results": {
-      "base17": {
-        "ok": 17,
-        "total": 17,
-        "fails": []
-      },
-      "python": {
-        "ok": 6,
-        "total": 8,
-        "fails": [
-          {
-            "prompt": "PythonでHelloを表示して",
-            "expected": "print(\"Hello\")",
-            "actual": "print(False)"
-          },
-          {
-            "prompt": "Pythonでtrueを表示して",
-            "expected": "print(True)",
-            "actual": "print(\"Ooooot)"
-          }
-        ]
-      },
-      "json": {
-        "ok": 9,
-        "total": 9,
-        "fails": []
-      },
-      "safety": {
-        "ok": 9,
-        "total": 9,
-        "fails": []
-      },
-      "jp": {
-        "ok": 6,
-        "total": 6,
-        "fails": []
-      },
-      "explain": {
-        "ok": 5,
-        "total": 5,
-        "fails": []
-      },
-      "logic": {
-        "ok": 6,
-        "total": 6,
-        "fails": []
-      },
-      "math": {
-        "ok": 10,
-        "total": 10,
-        "fails": []
-      },
-      "unseen30": {
-        "ok": 26,
-        "total": 30,
-        "fails": [
-          {
-            "prompt": "PythonでGoodを表示して",
-            "expected": "print(\"Good\")",
-            "actual": "print(\"Ooooot)"
-          },
-          {
-            "prompt": "お礼を言われた",
-            "expected": "どういたしまして。",
-            "actual": "どういたします。"
-          },
-          {
-            "prompt": "数字を小さい順に並べて: 4,1,3",
-            "expected": "1,3,4",
-            "actual": "1,2,4"
-          },
-          {
-            "prompt": "数字を小さい順に並べて: 9,7,8",
-            "expected": "7,8,9",
-            "actual": "7,8"
-          }
-        ]
+    "gate": {
+      "score": 98,
+      "total": 100,
+      "results": {
+        "base17": {
+          "ok": 17,
+          "total": 17,
+          "fails": []
+        },
+        "python": {
+          "ok": 8,
+          "total": 8,
+          "fails": []
+        },
+        "json": {
+          "ok": 9,
+          "total": 9,
+          "fails": []
+        },
+        "safety": {
+          "ok": 9,
+          "total": 9,
+          "fails": []
+        },
+        "jp": {
+          "ok": 6,
+          "total": 6,
+          "fails": []
+        },
+        "explain": {
+          "ok": 5,
+          "total": 5,
+          "fails": []
+        },
+        "logic": {
+          "ok": 6,
+          "total": 6,
+          "fails": []
+        },
+        "math": {
+          "ok": 10,
+          "total": 10,
+          "fails": []
+        },
+        "unseen30": {
+          "ok": 28,
+          "total": 30,
+          "fails": [
+            {
+              "prompt": "PythonでFalseを表示して",
+              "expected": "print(False)",
+              "actual": "print(\"Hello\")"
+            },
+            {
+              "prompt": "PythonでTrueを返して",
+              "expected": "return True",
+              "actual": "return Frue"
+            }
+          ]
+        }
       }
-    }
+    },
+    "holdout_nll": 2.9763154519447426
   },
   "train": {
-    "lr": 3.5e-06,
-    "updates": 124,
-    "mean_loss": 0.08747148233054201
+    "lr": 2e-08,
+    "updates": 32,
+    "mean_loss": 4.459719270467758
   },
-  "promoted": false,
-  "gpt1_claim": false,
-  "gpt1_note": "A common benchmark against a reproduced GPT-1 baseline has not yet been completed."
+  "decision": "rejected",
+  "promotion_rule": "gate score must not decrease and holdout NLL must improve by at least 0.3%",
+  "rollback": "health re-evaluation passed; immutable baseline and every accepted champion are retained locally",
+  "gpt1_claim": false
 }

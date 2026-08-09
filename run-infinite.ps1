@@ -1,8 +1,9 @@
 $ErrorActionPreference = 'Stop'
 $repo = $PSScriptRoot
-$python = 'C:\Users\matsu\AppData\Local\Programs\Python\Python312\python.exe'
-$env:PYTHONPATH = 'C:\GelteeLocal\.venv\Lib\site-packages'
-$state = 'C:\Users\matsu\Documents\Codex\2026-08-08\rru\work\geltee-infinite-state'
+$python = $env:GELTEE_PYTHON
+$state = $env:GELTEE_STATE_DIR
+$env:PYTHONPATH = $env:GELTEE_PYTHONPATH
+if (-not $python -or -not $state -or -not $env:PYTHONPATH) { throw 'Missing local Geltee launcher configuration.' }
 $logs = Join-Path $repo 'logs'
 $latestJson = Join-Path $logs 'latest.json'
 $latestMd = Join-Path $logs 'latest.md'
@@ -23,14 +24,16 @@ while (-not (Test-Path -LiteralPath (Join-Path $repo 'STOP'))) {
 
 - Step: $step
 - Updated: $($result.timestamp)
-- Baseline gate: $($result.baseline.score)/$($result.baseline.total)
-- Candidate gate: $($result.candidate.score)/$($result.candidate.total)
-- Promoted: $($result.promoted)
+- Baseline gate: $($result.baseline.gate.score)/$($result.baseline.gate.total)
+- Candidate gate: $($result.candidate.gate.score)/$($result.candidate.gate.total)
+- Baseline holdout NLL: $($result.baseline.holdout_nll)
+- Candidate holdout NLL: $($result.candidate.holdout_nll)
+- Decision: $($result.decision)
 - Learning rate: $($result.train.lr)
 - Mean loss: $($result.train.mean_loss)
 - GPT-1 exceeded: not yet established
 
-The GPT-1 statement requires a shared benchmark against a reproduced baseline; the Geltee gate alone is not used as proof.
+The fixed 100-case gate is never used for training. A candidate is promoted only when it preserves gate performance and improves an independent holdout set.
 "@
     Set-Content -LiteralPath $latestMd -Value $md -Encoding UTF8
     if (($step % 10) -eq 0) { & (Join-Path $repo 'publish-logs.ps1') -Step $step }
