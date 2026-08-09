@@ -1,6 +1,6 @@
 {
-  "step": 690,
-  "timestamp": "2026-08-09T20:18:24+0900",
+  "step": 700,
+  "timestamp": "2026-08-09T20:21:02+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
@@ -27,7 +27,7 @@
           {
             "prompt": "Pythonでtrueを表示して",
             "expected": "print(True)",
-            "actual": "print(Frue)"
+            "actual": "print(False)"
           }
         ]
       },
@@ -68,7 +68,7 @@
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(\"OK\")"
+            "actual": "print(Falsoo\")"
           },
           {
             "prompt": "Pythonで空リストを返して",
@@ -76,14 +76,14 @@
             "actual": "items = []"
           },
           {
-            "prompt": "短く要点を説明して",
-            "expected": "要点を確認します。",
-            "actual": "要xを確認します。"
+            "prompt": "お礼を言われた",
+            "expected": "どういたしまして。",
+            "actual": "どういたします。"
           },
           {
             "prompt": "数字を小さい順に並べて: 9,7,8",
             "expected": "7,8,9",
-            "actual": "7,8"
+            "actual": "7,8,8,8,8,8"
           }
         ]
       }
@@ -91,8 +91,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 112,
-    "mean_loss": 0.08373092087129765
+    "updates": 118,
+    "mean_loss": 0.08507636480572763
   },
   "promoted": false,
   "gpt1_claim": false,
