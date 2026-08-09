@@ -1,13 +1,13 @@
 {
-  "step": 20,
-  "timestamp": "2026-08-09T17:19:15+0900",
+  "step": 30,
+  "timestamp": "2026-08-09T17:21:58+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 98,
     "total": 100
   },
   "candidate": {
-    "score": 94,
+    "score": 92,
     "total": 100,
     "results": {
       "base17": {
@@ -25,14 +25,14 @@
             "actual": "print(False)"
           },
           {
-            "prompt": "Pythonで空リストを作って",
-            "expected": "items = []",
-            "actual": "return []"
-          },
-          {
             "prompt": "Pythonでtrueを表示して",
             "expected": "print(True)",
-            "actual": "print(False)"
+            "actual": "print(Falso\")"
+          },
+          {
+            "prompt": "PythonでFalseを返して",
+            "expected": "return False",
+            "actual": "return True"
           }
         ]
       },
@@ -67,7 +67,7 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 27,
+        "ok": 25,
         "total": 30,
         "fails": [
           {
@@ -76,14 +76,24 @@
             "actual": "print(Falsooo\")"
           },
           {
+            "prompt": "Pythonで空リストを返して",
+            "expected": "return []",
+            "actual": "items = []"
+          },
+          {
             "prompt": "朝の挨拶",
             "expected": "おはようございます。",
             "actual": "状はようございます。"
           },
           {
-            "prompt": "不明な最新情報を答えて",
-            "expected": "最新情報は確認が必要です。",
-            "actual": "確認が必要です。"
+            "prompt": "数字を小さい順に並べて: 4,1,3",
+            "expected": "1,3,4",
+            "actual": "1,2,5"
+          },
+          {
+            "prompt": "数字を小さい順に並べて: 9,7,8",
+            "expected": "7,8,9",
+            "actual": "7,8,9,9,8,9"
           }
         ]
       }
@@ -91,8 +101,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 124,
-    "mean_loss": 0.1249315704414636
+    "updates": 112,
+    "mean_loss": 0.13169522885782417
   },
   "promoted": false,
   "gpt1_claim": false,
