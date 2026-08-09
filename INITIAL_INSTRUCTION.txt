@@ -1,0 +1,2 @@
+battle_v227_v171_small_vector_search_candidateに入っているgeltee_v227_v171_small_vector_search_model.ptを学習させて、GPT-1を超えさせてください。
+
