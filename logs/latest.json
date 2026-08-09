@@ -1,13 +1,13 @@
 {
-  "step": 310,
-  "timestamp": "2026-08-09T18:37:47+0900",
+  "step": 320,
+  "timestamp": "2026-08-09T18:40:26+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 95,
+    "score": 98,
     "total": 100,
     "results": {
       "base17": {
@@ -62,32 +62,16 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 27,
+        "ok": 30,
         "total": 30,
-        "fails": [
-          {
-            "prompt": "PythonでGoodを表示して",
-            "expected": "print(\"Good\")",
-            "actual": "print(Falsooo\")"
-          },
-          {
-            "prompt": "Pythonで空リストを返して",
-            "expected": "return []",
-            "actual": "items = []"
-          },
-          {
-            "prompt": "朝の挨拶",
-            "expected": "おはようございます。",
-            "actual": "状はようございます。"
-          }
-        ]
+        "fails": []
       }
     }
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 118,
-    "mean_loss": 0.08338738157599591
+    "updates": 124,
+    "mean_loss": 0.0886734914323927
   },
   "promoted": false,
   "gpt1_claim": false,
