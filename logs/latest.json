@@ -1,13 +1,13 @@
 {
-  "step": 260,
-  "timestamp": "2026-08-09T18:24:27+0900",
+  "step": 270,
+  "timestamp": "2026-08-09T18:27:07+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 95,
+    "score": 97,
     "total": 100,
     "results": {
       "base17": {
@@ -16,23 +16,13 @@
         "fails": []
       },
       "python": {
-        "ok": 5,
+        "ok": 7,
         "total": 8,
         "fails": [
           {
             "prompt": "PythonでHelloを表示して",
             "expected": "print(\"Hello\")",
-            "actual": "print(False)"
-          },
-          {
-            "prompt": "Pythonでtrueを表示して",
-            "expected": "print(True)",
-            "actual": "print(False)"
-          },
-          {
-            "prompt": "PythonでFalseを返して",
-            "expected": "return False",
-            "actual": "return True"
+            "actual": "print(Telso)"
           }
         ]
       },
@@ -73,12 +63,12 @@
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(Falloe)"
+            "actual": "print(True)"
           },
           {
-            "prompt": "数字を小さい順に並べて: 9,7,8",
-            "expected": "7,8,9",
-            "actual": "7,8"
+            "prompt": "Pythonで空リストを返して",
+            "expected": "return []",
+            "actual": "items = []"
           }
         ]
       }
@@ -86,8 +76,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 124,
-    "mean_loss": 0.08651637177639816
+    "updates": 112,
+    "mean_loss": 0.0773873280829136
   },
   "promoted": false,
   "gpt1_claim": false,
