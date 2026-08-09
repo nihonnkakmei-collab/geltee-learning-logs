@@ -1,13 +1,13 @@
 {
-  "step": 650,
-  "timestamp": "2026-08-09T20:07:49+0900",
+  "step": 660,
+  "timestamp": "2026-08-09T20:10:28+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 95,
+    "score": 93,
     "total": 100,
     "results": {
       "base17": {
@@ -16,13 +16,18 @@
         "fails": []
       },
       "python": {
-        "ok": 7,
+        "ok": 6,
         "total": 8,
         "fails": [
           {
+            "prompt": "PythonでHelloを表示して",
+            "expected": "print(\"Hello\")",
+            "actual": "print(False)"
+          },
+          {
             "prompt": "Pythonでtrueを表示して",
             "expected": "print(True)",
-            "actual": "print(\"rue)"
+            "actual": "print(Falso\")"
           }
         ]
       },
@@ -57,13 +62,13 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 26,
+        "ok": 25,
         "total": 30,
         "fails": [
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(\"rue)"
+            "actual": "print(Falso\")"
           },
           {
             "prompt": "Pythonで空リストを返して",
@@ -71,9 +76,14 @@
             "actual": "items = []"
           },
           {
-            "prompt": "朝の挨拶",
-            "expected": "おはようございます。",
-            "actual": "新はようございます。"
+            "prompt": "PythonでTrueを返して",
+            "expected": "return True",
+            "actual": "return Frue"
+          },
+          {
+            "prompt": "数字を小さい順に並べて: 4,1,3",
+            "expected": "1,3,4",
+            "actual": "1,2,3"
           },
           {
             "prompt": "数字を小さい順に並べて: 9,7,8",
@@ -86,8 +96,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 124,
-    "mean_loss": 0.08465210532365346
+    "updates": 112,
+    "mean_loss": 0.07823703689378902
   },
   "promoted": false,
   "gpt1_claim": false,
