@@ -1,13 +1,13 @@
 {
-  "step": 610,
-  "timestamp": "2026-08-09T19:57:14+0900",
+  "step": 620,
+  "timestamp": "2026-08-09T19:59:53+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 96,
+    "score": 92,
     "total": 100,
     "results": {
       "base17": {
@@ -16,9 +16,25 @@
         "fails": []
       },
       "python": {
-        "ok": 8,
+        "ok": 5,
         "total": 8,
-        "fails": []
+        "fails": [
+          {
+            "prompt": "PythonでHelloを表示して",
+            "expected": "print(\"Hello\")",
+            "actual": "print(False)"
+          },
+          {
+            "prompt": "Pythonでtrueを表示して",
+            "expected": "print(True)",
+            "actual": "print(\"Ooooot)"
+          },
+          {
+            "prompt": "PythonでFalseを返して",
+            "expected": "return False",
+            "actual": "return True"
+          }
+        ]
       },
       "json": {
         "ok": 9,
@@ -51,13 +67,13 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 26,
+        "ok": 25,
         "total": 30,
         "fails": [
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(True)"
+            "actual": "print(\"Telso\")"
           },
           {
             "prompt": "Pythonで空リストを返して",
@@ -67,12 +83,17 @@
           {
             "prompt": "朝の挨拶",
             "expected": "おはようございます。",
-            "actual": "原因を確認しましょう。"
+            "actual": "状はようございます。"
           },
           {
-            "prompt": "5は2より大きい？",
-            "expected": "はい",
-            "actual": "はは"
+            "prompt": "数字を小さい順に並べて: 9,7,8",
+            "expected": "7,8,9",
+            "actual": "7,8,8"
+          },
+          {
+            "prompt": "JSONでok true count 1",
+            "expected": "{\"ok\":true,\"count\":1}",
+            "actual": "{\"ok\":true}"
           }
         ]
       }
@@ -80,8 +101,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 118,
-    "mean_loss": 0.08820993765821918
+    "updates": 124,
+    "mean_loss": 0.09564710951704386
   },
   "promoted": false,
   "gpt1_claim": false,
