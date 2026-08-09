@@ -1,13 +1,13 @@
 {
-  "step": 940,
-  "timestamp": "2026-08-09T21:24:36+0900",
+  "step": 950,
+  "timestamp": "2026-08-09T21:27:15+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 92,
+    "score": 94,
     "total": 100,
     "results": {
       "base17": {
@@ -27,7 +27,7 @@
           {
             "prompt": "Pythonでtrueを表示して",
             "expected": "print(True)",
-            "actual": "print(\"Oood\")"
+            "actual": "print(False)"
           }
         ]
       },
@@ -62,13 +62,13 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 24,
+        "ok": 26,
         "total": 30,
         "fails": [
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(\"Tood\")"
+            "actual": "print(Falsooot)"
           },
           {
             "prompt": "Pythonで空リストを返して",
@@ -78,17 +78,7 @@
           {
             "prompt": "朝の挨拶",
             "expected": "おはようございます。",
-            "actual": "新はようございます。"
-          },
-          {
-            "prompt": "短く要点を説明して",
-            "expected": "要点を確認します。",
-            "actual": "要]を確認します。"
-          },
-          {
-            "prompt": "5は2より大きい？",
-            "expected": "はい",
-            "actual": "はは"
+            "actual": "状はようございます。"
           },
           {
             "prompt": "数字を小さい順に並べて: 9,7,8",
@@ -101,8 +91,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 118,
-    "mean_loss": 0.08088935639619395
+    "updates": 124,
+    "mean_loss": 0.07999937798544282
   },
   "promoted": false,
   "gpt1_claim": false,
