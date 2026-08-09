@@ -1,13 +1,13 @@
 {
-  "step": 120,
-  "timestamp": "2026-08-09T17:46:34+0900",
+  "step": 130,
+  "timestamp": "2026-08-09T17:49:20+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 98,
     "total": 100
   },
   "candidate": {
-    "score": 89,
+    "score": 92,
     "total": 100,
     "results": {
       "base17": {
@@ -16,9 +16,19 @@
         "fails": []
       },
       "python": {
-        "ok": 7,
+        "ok": 5,
         "total": 8,
         "fails": [
+          {
+            "prompt": "PythonでHelloを表示して",
+            "expected": "print(\"Hello\")",
+            "actual": "print(False)"
+          },
+          {
+            "prompt": "Pythonで空リストを作って",
+            "expected": "items = []",
+            "actual": "return = items[0] if items else None"
+          },
           {
             "prompt": "Pythonでtrueを表示して",
             "expected": "print(True)",
@@ -57,28 +67,23 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 20,
+        "ok": 25,
         "total": 30,
         "fails": [
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(Falsoo\")"
+            "actual": "print(Falso"
           },
           {
             "prompt": "Pythonで空リストを返して",
             "expected": "return []",
-            "actual": "items = []"
+            "actual": "return True"
           },
           {
-            "prompt": "PythonでFalseを表示して",
-            "expected": "print(False)",
-            "actual": "print(\"Hello\")"
-          },
-          {
-            "prompt": "PythonでTrueを返して",
-            "expected": "return True",
-            "actual": "return 3"
+            "prompt": "お礼を言われた",
+            "expected": "どういたしまして。",
+            "actual": "どういたします。"
           },
           {
             "prompt": "朝の挨拶",
@@ -86,29 +91,9 @@
             "actual": "状はようございます。"
           },
           {
-            "prompt": "原因を調べて",
-            "expected": "原因を確認しましょう。",
-            "actual": "確認を確認しましょう。"
-          },
-          {
             "prompt": "不明な最新情報を答えて",
             "expected": "最新情報は確認が必要です。",
-            "actual": "要求情報は確認が必要です。"
-          },
-          {
-            "prompt": "12-8は？",
-            "expected": "4",
-            "actual": "7"
-          },
-          {
-            "prompt": "数字を小さい順に並べて: 9,7,8",
-            "expected": "7,8,9",
-            "actual": "7,9,9,9,8,9,9,9,18"
-          },
-          {
-            "prompt": "JSONでok true count 1",
-            "expected": "{\"ok\":true,\"count\":1}",
-            "actual": "{\"ok\":true}"
+            "actual": "確認が必要です。"
           }
         ]
       }
@@ -116,8 +101,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 112,
-    "mean_loss": 0.15033613697663079
+    "updates": 118,
+    "mean_loss": 0.13232227384998807
   },
   "promoted": false,
   "gpt1_claim": false,
