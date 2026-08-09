@@ -1,13 +1,13 @@
 {
-  "step": 280,
-  "timestamp": "2026-08-09T18:29:46+0900",
+  "step": 290,
+  "timestamp": "2026-08-09T18:32:27+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 96,
+    "score": 94,
     "total": 100,
     "results": {
       "base17": {
@@ -16,23 +16,18 @@
         "fails": []
       },
       "python": {
-        "ok": 5,
+        "ok": 6,
         "total": 8,
         "fails": [
           {
-            "prompt": "Pythonで空リストを作って",
-            "expected": "items = []",
-            "actual": "return []"
+            "prompt": "PythonでHelloを表示して",
+            "expected": "print(\"Hello\")",
+            "actual": "print(False)"
           },
           {
             "prompt": "Pythonでtrueを表示して",
             "expected": "print(True)",
             "actual": "print(\"Oood\")"
-          },
-          {
-            "prompt": "PythonでFalseを返して",
-            "expected": "return False",
-            "actual": "return True"
           }
         ]
       },
@@ -57,9 +52,15 @@
         "fails": []
       },
       "logic": {
-        "ok": 6,
+        "ok": 5,
         "total": 6,
-        "fails": []
+        "fails": [
+          {
+            "prompt": "数字を小さい順に並べて: 3,1,2",
+            "expected": "1,2,3",
+            "actual": "1,3,3"
+          }
+        ]
       },
       "math": {
         "ok": 10,
@@ -67,13 +68,23 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 29,
+        "ok": 27,
         "total": 30,
         "fails": [
           {
-            "prompt": "PythonでGoodを表示して",
-            "expected": "print(\"Good\")",
-            "actual": "print(\"Tood\")"
+            "prompt": "Pythonで空リストを返して",
+            "expected": "return []",
+            "actual": "items = []"
+          },
+          {
+            "prompt": "数字を小さい順に並べて: 9,7,8",
+            "expected": "7,8,9",
+            "actual": "7,8,8"
+          },
+          {
+            "prompt": "JSONでnameをGelteeにして",
+            "expected": "{\"name\":\"Geltee\"}",
+            "actual": "{\"name\":false}"
           }
         ]
       }
@@ -81,8 +92,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 118,
-    "mean_loss": 0.08396503690280535
+    "updates": 124,
+    "mean_loss": 0.08326934042130388
   },
   "promoted": false,
   "gpt1_claim": false,
