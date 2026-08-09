@@ -1,13 +1,13 @@
 {
-  "step": 990,
-  "timestamp": "2026-08-09T21:37:50+0900",
+  "step": 1000,
+  "timestamp": "2026-08-09T21:40:28+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 94,
+    "score": 96,
     "total": 100,
     "results": {
       "base17": {
@@ -22,7 +22,7 @@
           {
             "prompt": "Pythonでtrueを表示して",
             "expected": "print(True)",
-            "actual": "print(\"OK\")"
+            "actual": "print(\"Good\")"
           }
         ]
       },
@@ -57,28 +57,18 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 25,
+        "ok": 27,
         "total": 30,
         "fails": [
-          {
-            "prompt": "PythonでGoodを表示して",
-            "expected": "print(\"Good\")",
-            "actual": "print(\"Oood\")"
-          },
           {
             "prompt": "Pythonで空リストを返して",
             "expected": "return []",
             "actual": "items = []"
           },
           {
-            "prompt": "PythonでFalseを表示して",
-            "expected": "print(False)",
-            "actual": "print(\"Hello\")"
-          },
-          {
-            "prompt": "5は2より大きい？",
-            "expected": "はい",
-            "actual": "はは"
+            "prompt": "原因を調べて",
+            "expected": "原因を確認しましょう。",
+            "actual": "原因を確認しました。"
           },
           {
             "prompt": "数字を小さい順に並べて: 9,7,8",
@@ -91,8 +81,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 112,
-    "mean_loss": 0.08041964898280948
+    "updates": 118,
+    "mean_loss": 0.09513318935013639
   },
   "promoted": false,
   "gpt1_claim": false,
