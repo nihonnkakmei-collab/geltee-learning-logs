@@ -1,6 +1,6 @@
 {
-  "step": 1170,
-  "timestamp": "2026-08-09T22:49:48+0900",
+  "step": 1180,
+  "timestamp": "2026-08-09T22:51:59+0900",
   "source_model": "geltee_v227_v171_small_vector_search_model.pt",
   "training_data": "geltee_v02_100m_mix",
   "curated_data_used": true,
@@ -139,12 +139,12 @@
         }
       }
     },
-    "holdout_nll": 2.9771966845805764
+    "holdout_nll": 2.9766104231182453
   },
   "train": {
-    "lr": 5e-08,
+    "lr": 2e-08,
     "updates": 32,
-    "mean_loss": 5.479427449405193
+    "mean_loss": 5.454020209610462
   },
   "decision": "rejected",
   "promotion_rule": "gate score must not decrease and holdout NLL must improve by at least 0.3%",
