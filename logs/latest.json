@@ -1,13 +1,13 @@
 {
-  "step": 160,
-  "timestamp": "2026-08-09T17:57:41+0900",
+  "step": 170,
+  "timestamp": "2026-08-09T18:00:27+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 94,
+    "score": 95,
     "total": 100,
     "results": {
       "base17": {
@@ -16,7 +16,7 @@
         "fails": []
       },
       "python": {
-        "ok": 5,
+        "ok": 6,
         "total": 8,
         "fails": [
           {
@@ -25,14 +25,9 @@
             "actual": "print(False)"
           },
           {
-            "prompt": "Pythonで空リストを作って",
-            "expected": "items = []",
-            "actual": "return []"
-          },
-          {
             "prompt": "Pythonでtrueを表示して",
             "expected": "print(True)",
-            "actual": "print(False)"
+            "actual": "print(\"OK\")"
           }
         ]
       },
@@ -73,17 +68,17 @@
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(Falso"
+            "actual": "print(\"Oood\")"
           },
           {
-            "prompt": "PythonでTrueを返して",
-            "expected": "return True",
-            "actual": "return Frn if items else None"
+            "prompt": "Pythonで空リストを返して",
+            "expected": "return []",
+            "actual": "items = []"
           },
           {
-            "prompt": "お礼を言われた",
-            "expected": "どういたしまして。",
-            "actual": "どういたします。"
+            "prompt": "数字を小さい順に並べて: 9,7,8",
+            "expected": "7,8,9",
+            "actual": "7,8"
           }
         ]
       }
@@ -91,8 +86,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 118,
-    "mean_loss": 0.09370444839156736
+    "updates": 124,
+    "mean_loss": 0.07935604317879189
   },
   "promoted": false,
   "gpt1_claim": false,
