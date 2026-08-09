@@ -1,6 +1,6 @@
 {
-  "step": 1020,
-  "timestamp": "2026-08-09T22:17:10+0900",
+  "step": 1030,
+  "timestamp": "2026-08-09T22:19:21+0900",
   "source_model": "geltee_v227_v171_small_vector_search_model.pt",
   "training_data": "geltee_v02_100m_mix",
   "curated_data_used": true,
@@ -128,18 +128,18 @@
             {
               "prompt": "PythonでTrueを返して",
               "expected": "return True",
-              "actual": "return Fade"
+              "actual": "return Frue"
             }
           ]
         }
       }
     },
-    "holdout_nll": 2.975989869377713
+    "holdout_nll": 2.9768102646499983
   },
   "train": {
-    "lr": 5e-08,
+    "lr": 2e-08,
     "updates": 32,
-    "mean_loss": 5.6126731019467115
+    "mean_loss": 5.029330234974623
   },
   "decision": "rejected",
   "promotion_rule": "gate score must not decrease and holdout NLL must improve by at least 0.3%",
