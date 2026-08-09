@@ -13,3 +13,7 @@ Stop the loop by creating `STOP` in this repository or by terminating the proces
 ## Curated data intake
 
 `curate_dataset.py` creates a local, reviewable candidate queue from explicitly approved, licensed sources. It rejects unapproved sources, likely personal data, and duplicate or near-duplicate examples; it does not crawl the web and it cannot change the training loop. See `curation_instructions.md`.
+
+## Gelqeen source discovery
+
+Every ten guarded learning steps, `research_sources.py` reads only the failed gate categories and searches the Hugging Face dataset catalogue for metadata. It keeps only results whose declared licence is in `research_policy.json`, then records a review queue under `research/latest.json`. It never downloads records, modifies the allowlist, or trains on discovered sources. This separation prevents an apparent weakness from becoming an unlicensed or contaminated training-data change.

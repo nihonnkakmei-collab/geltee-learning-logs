@@ -1,0 +1,30 @@
+{
+  "catalog_endpoint": "https://huggingface.co/api/datasets",
+  "max_results_per_query": 8,
+  "approved_licenses": ["apache-2.0", "mit", "cc-by-4.0", "cc-by-sa-4.0", "cc0-1.0", "odc-by", "pddl"],
+  "query_by_gate": {
+    "python": "Japanese Python instruction",
+    "json": "Japanese JSON instruction",
+    "math": "Japanese math instruction",
+    "logic": "Japanese reasoning instruction",
+    "jp": "Japanese instruction dataset",
+    "explain": "Japanese explanation instruction",
+    "unseen30": "Japanese general instruction"
+  },
+  "seed_candidates": [
+    {
+      "dataset_id": "llm-jp/oasst1-21k-ja",
+      "url": "https://huggingface.co/datasets/llm-jp/oasst1-21k-ja",
+      "license": "apache-2.0",
+      "topics": ["jp", "explain", "unseen30"]
+    },
+    {
+      "dataset_id": "izumi-lab/llm-japanese-dataset",
+      "url": "https://huggingface.co/datasets/izumi-lab/llm-japanese-dataset",
+      "license": "cc-by-sa-4.0",
+      "topics": ["jp", "math", "logic", "unseen30"]
+    }
+  ],
+  "automatic_training": false,
+  "human_review_required": true
+}

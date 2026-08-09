@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-08-09T22:06:30+0900",
+  "weak_areas": {
+    "unseen30": 2
+  },
+  "candidates": [
+    {
+      "gate": "unseen30",
+      "failed_cases": 2,
+      "query": "known Japanese instruction candidate",
+      "dataset_id": "llm-jp/oasst1-21k-ja",
+      "url": "https://huggingface.co/datasets/llm-jp/oasst1-21k-ja",
+      "license": "apache-2.0",
+      "last_modified": null,
+      "downloads": null,
+      "decision": "discovered_only_requires_allowlist_and_data_card_review"
+    },
+    {
+      "gate": "unseen30",
+      "failed_cases": 2,
+      "query": "known Japanese instruction candidate",
+      "dataset_id": "izumi-lab/llm-japanese-dataset",
+      "url": "https://huggingface.co/datasets/izumi-lab/llm-japanese-dataset",
+      "license": "cc-by-sa-4.0",
+      "last_modified": null,
+      "downloads": null,
+      "decision": "discovered_only_requires_allowlist_and_data_card_review"
+    }
+  ],
+  "errors": [],
+  "automatic_download": false,
+  "automatic_training": false,
+  "next_action": "Review each dataset card, licence and terms; add only approved sources to a local allowlist before downloading any records."
+}
