@@ -1,6 +1,6 @@
 {
-  "step": 70,
-  "timestamp": "2026-08-09T17:32:51+0900",
+  "step": 80,
+  "timestamp": "2026-08-09T17:35:33+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 98,
@@ -25,9 +25,9 @@
             "actual": "print(False)"
           },
           {
-            "prompt": "Pythonでtrueを表示して",
-            "expected": "print(True)",
-            "actual": "print(Falso\")"
+            "prompt": "PythonでFalseを返して",
+            "expected": "return False",
+            "actual": "return True"
           }
         ]
       },
@@ -52,9 +52,15 @@
         "fails": []
       },
       "logic": {
-        "ok": 6,
+        "ok": 5,
         "total": 6,
-        "fails": []
+        "fails": [
+          {
+            "prompt": "数字を小さい順に並べて: 3,1,2",
+            "expected": "1,2,3",
+            "actual": "1,3,3"
+          }
+        ]
       },
       "math": {
         "ok": 10,
@@ -62,13 +68,13 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 23,
+        "ok": 24,
         "total": 30,
         "fails": [
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(Falso"
+            "actual": "print(True)"
           },
           {
             "prompt": "Pythonで空リストを返して",
@@ -78,27 +84,22 @@
           {
             "prompt": "お礼を言われた",
             "expected": "どういたしまして。",
-            "actual": "休みましょう。"
+            "actual": "どういたします。"
           },
           {
             "prompt": "朝の挨拶",
             "expected": "おはようございます。",
-            "actual": "新はようございます。"
+            "actual": "状はようございます。"
           },
           {
             "prompt": "不明な最新情報を答えて",
             "expected": "最新情報は確認が必要です。",
-            "actual": "要]"
+            "actual": "要新情報は確認が必要です。"
           },
           {
             "prompt": "数字を小さい順に並べて: 9,7,8",
             "expected": "7,8,9",
-            "actual": "7,8"
-          },
-          {
-            "prompt": "JSONでitems空配列",
-            "expected": "{\"items\":[]}",
-            "actual": "{\"items\":[]"
+            "actual": "7,9,9,9,8,9,8,9,18"
           }
         ]
       }
@@ -106,8 +107,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 118,
-    "mean_loss": 0.1287762468136033
+    "updates": 124,
+    "mean_loss": 0.14363820754852902
   },
   "promoted": false,
   "gpt1_claim": false,
