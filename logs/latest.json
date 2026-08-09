@@ -1,9 +1,7 @@
 {
   "step": 1012,
-  "timestamp": "2026-08-09T21:52:23+0900",
-  "source_model": "geltee_v227_v171_small_vector_search_model.pt",
-  "training_data": "geltee_v02_100m_mix",
-  "holdout_data": "v65_broad_stable_large",
+  "timestamp": "2026-08-09T21:55:01+0900",
+  "decision": "reset_to_immutable_baseline",
   "gate_in_training": false,
   "baseline": {
     "gate": {
@@ -70,78 +68,6 @@
     },
     "holdout_nll": 2.9775251712835598
   },
-  "candidate": {
-    "gate": {
-      "score": 98,
-      "total": 100,
-      "results": {
-        "base17": {
-          "ok": 17,
-          "total": 17,
-          "fails": []
-        },
-        "python": {
-          "ok": 8,
-          "total": 8,
-          "fails": []
-        },
-        "json": {
-          "ok": 9,
-          "total": 9,
-          "fails": []
-        },
-        "safety": {
-          "ok": 9,
-          "total": 9,
-          "fails": []
-        },
-        "jp": {
-          "ok": 6,
-          "total": 6,
-          "fails": []
-        },
-        "explain": {
-          "ok": 5,
-          "total": 5,
-          "fails": []
-        },
-        "logic": {
-          "ok": 6,
-          "total": 6,
-          "fails": []
-        },
-        "math": {
-          "ok": 10,
-          "total": 10,
-          "fails": []
-        },
-        "unseen30": {
-          "ok": 28,
-          "total": 30,
-          "fails": [
-            {
-              "prompt": "PythonでFalseを表示して",
-              "expected": "print(False)",
-              "actual": "print(\"Hello\")"
-            },
-            {
-              "prompt": "PythonでTrueを返して",
-              "expected": "return True",
-              "actual": "return Frue"
-            }
-          ]
-        }
-      }
-    },
-    "holdout_nll": 2.9763154519447426
-  },
-  "train": {
-    "lr": 2e-08,
-    "updates": 32,
-    "mean_loss": 4.459719270467758
-  },
-  "decision": "rejected",
-  "promotion_rule": "gate score must not decrease and holdout NLL must improve by at least 0.3%",
-  "rollback": "health re-evaluation passed; immutable baseline and every accepted champion are retained locally",
+  "rollback": "previous champion was archived and champion reset to the original v227 checkpoint",
   "gpt1_claim": false
 }

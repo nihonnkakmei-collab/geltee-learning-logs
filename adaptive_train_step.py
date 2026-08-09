@@ -238,13 +238,14 @@ def main() -> int:
         write_manifest(manifest_path, manifest)
 
     if args.reset_only:
+        reset_message = "previous champion was archived and champion reset to the original v227 checkpoint" if args.reset_to_baseline else "immutable baseline champion was verified without modification"
         result = {
             "step": args.step,
             "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
-            "decision": "reset_to_immutable_baseline",
+            "decision": "reset_to_immutable_baseline" if args.reset_to_baseline else "baseline_verified",
             "gate_in_training": False,
             "baseline": {"gate": baseline_gate, "holdout_nll": baseline_holdout},
-            "rollback": "previous champion was archived and champion reset to the original v227 checkpoint",
+            "rollback": reset_message,
             "gpt1_claim": False,
         }
         args.result.parent.mkdir(parents=True, exist_ok=True)
