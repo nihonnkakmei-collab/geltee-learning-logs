@@ -1,12 +1,12 @@
 ﻿# Latest Geltee learning status
 
-- Step: 670
-- Updated: 2026-08-09T20:13:06+0900
+- Step: 680
+- Updated: 2026-08-09T20:15:45+0900
 - Baseline gate: 99/100
-- Candidate gate: 95/100
+- Candidate gate: 96/100
 - Promoted: False
 - Learning rate: 3.5E-06
-- Mean loss: 0.08511306549349737
+- Mean loss: 0.08980495006689594
 - GPT-1 exceeded: not yet established
 
 The GPT-1 statement requires a shared benchmark against a reproduced baseline; the Geltee gate alone is not used as proof.
