@@ -1,14 +1,14 @@
 ﻿# Latest Geltee learning status
 
-- Step: 1340
-- Updated: 2026-08-09T23:26:48+0900
+- Step: 1350
+- Updated: 2026-08-09T23:29:28+0900
 - Baseline gate: 98/100
-- Candidate gate: 98/100
+- Candidate gate: 97/100
 - Baseline holdout NLL: 2.9775251712835598
-- Candidate holdout NLL: 2.9765809902489764
+- Candidate holdout NLL: 2.97785182578491
 - Decision: rejected
-- Learning rate: 3E-08
-- Mean loss: 5.53339110314846
+- Learning rate: 5E-08
+- Mean loss: 5.324907079339027
 - GPT-1 exceeded: not yet established
 
 The fixed 100-case gate is never used for training. A candidate is promoted only when it preserves gate performance and improves an independent holdout set.
