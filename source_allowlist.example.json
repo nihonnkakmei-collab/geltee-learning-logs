@@ -1,0 +1,12 @@
+{
+  "sources": [
+    {
+      "source_id": "replace-with-a-reviewed-source",
+      "approved": false,
+      "title": "Add a source only after reviewing its licence, terms, and intended use.",
+      "url": "https://example.invalid/source",
+      "license": "REPLACE",
+      "license_url": "https://example.invalid/licence"
+    }
+  ]
+}

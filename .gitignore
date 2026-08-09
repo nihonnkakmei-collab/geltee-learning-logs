@@ -4,3 +4,6 @@ state/
 *.bin
 history/
 __pycache__/
+curation-output/
+*.raw.jsonl
+*allowlist.json

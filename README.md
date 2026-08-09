@@ -9,3 +9,7 @@ Each step samples broad training data and a separate holdout set. The fixed 100-
 `GPT-1を超えた` can only be claimed after a common benchmark against a reproduced GPT-1 baseline. The internal 100-case Geltee gate is tracked separately and is not presented as proof of that claim.
 
 Stop the loop by creating `STOP` in this repository or by terminating the process.
+
+## Curated data intake
+
+`curate_dataset.py` creates a local, reviewable candidate queue from explicitly approved, licensed sources. It rejects unapproved sources, likely personal data, and duplicate or near-duplicate examples; it does not crawl the web and it cannot change the training loop. See `curation_instructions.md`.
