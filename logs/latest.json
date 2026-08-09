@@ -1,13 +1,13 @@
 {
-  "step": 810,
-  "timestamp": "2026-08-09T20:50:10+0900",
+  "step": 820,
+  "timestamp": "2026-08-09T20:52:49+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 94,
+    "score": 95,
     "total": 100,
     "results": {
       "base17": {
@@ -20,14 +20,14 @@
         "total": 8,
         "fails": [
           {
-            "prompt": "Pythonでtrueを表示して",
-            "expected": "print(True)",
-            "actual": "print(\"Ooo\")"
+            "prompt": "PythonでHelloを表示して",
+            "expected": "print(\"Hello\")",
+            "actual": "print(False)"
           },
           {
-            "prompt": "PythonでFalseを返して",
-            "expected": "return False",
-            "actual": "return True"
+            "prompt": "Pythonでtrueを表示して",
+            "expected": "print(True)",
+            "actual": "print(False)"
           }
         ]
       },
@@ -52,15 +52,9 @@
         "fails": []
       },
       "logic": {
-        "ok": 5,
+        "ok": 6,
         "total": 6,
-        "fails": [
-          {
-            "prompt": "数字を小さい順に並べて: 3,1,2",
-            "expected": "1,2,3",
-            "actual": "1,3,4"
-          }
-        ]
+        "fails": []
       },
       "math": {
         "ok": 10,
@@ -74,17 +68,17 @@
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(\"Hood\")"
+            "actual": "print(Falsoo\")"
           },
           {
-            "prompt": "Pythonで空リストを返して",
-            "expected": "return []",
-            "actual": "items = []"
+            "prompt": "朝の挨拶",
+            "expected": "おはようございます。",
+            "actual": "状はようございます。"
           },
           {
-            "prompt": "PythonでFalseを表示して",
-            "expected": "print(False)",
-            "actual": "print(\"Hello\")"
+            "prompt": "数字を小さい順に並べて: 9,7,8",
+            "expected": "7,8,9",
+            "actual": "7,8"
           }
         ]
       }
@@ -92,8 +86,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 112,
-    "mean_loss": 0.07460305036537562
+    "updates": 118,
+    "mean_loss": 0.08863725612287507
   },
   "promoted": false,
   "gpt1_claim": false,
