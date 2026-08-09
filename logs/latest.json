@@ -1,13 +1,13 @@
 {
-  "step": 890,
-  "timestamp": "2026-08-09T21:11:22+0900",
+  "step": 900,
+  "timestamp": "2026-08-09T21:14:01+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
     "total": 100
   },
   "candidate": {
-    "score": 96,
+    "score": 97,
     "total": 100,
     "results": {
       "base17": {
@@ -16,15 +16,9 @@
         "fails": []
       },
       "python": {
-        "ok": 7,
+        "ok": 8,
         "total": 8,
-        "fails": [
-          {
-            "prompt": "PythonでHelloを表示して",
-            "expected": "print(\"Hello\")",
-            "actual": "print(False)"
-          }
-        ]
+        "fails": []
       },
       "json": {
         "ok": 9,
@@ -63,7 +57,7 @@
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(\"Tood\")"
+            "actual": "print(True)"
           },
           {
             "prompt": "Pythonで空リストを返して",
@@ -71,9 +65,9 @@
             "actual": "items = []"
           },
           {
-            "prompt": "お礼を言われた",
-            "expected": "どういたしまして。",
-            "actual": "どういたします。"
+            "prompt": "朝の挨拶",
+            "expected": "おはようございます。",
+            "actual": "状はようございます。"
           }
         ]
       }
@@ -81,8 +75,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 124,
-    "mean_loss": 0.09051709702904712
+    "updates": 112,
+    "mean_loss": 0.08697064172307327
   },
   "promoted": false,
   "gpt1_claim": false,
