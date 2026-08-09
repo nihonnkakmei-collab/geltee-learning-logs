@@ -1,6 +1,6 @@
 {
-  "step": 570,
-  "timestamp": "2026-08-09T19:46:39+0900",
+  "step": 580,
+  "timestamp": "2026-08-09T19:49:18+0900",
   "source_model": "C:\\Users\\matsu\\Downloads\\battle_v227_v171_small_vector_search_candidate\\geltee_v227_v171_small_vector_search_model.pt",
   "baseline": {
     "score": 99,
@@ -20,9 +20,9 @@
         "total": 8,
         "fails": [
           {
-            "prompt": "Pythonでtrueを表示して",
-            "expected": "print(True)",
-            "actual": "print(\"alse)"
+            "prompt": "PythonでHelloを表示して",
+            "expected": "print(\"Hello\")",
+            "actual": "print(False)"
           }
         ]
       },
@@ -47,9 +47,15 @@
         "fails": []
       },
       "logic": {
-        "ok": 6,
+        "ok": 5,
         "total": 6,
-        "fails": []
+        "fails": [
+          {
+            "prompt": "数字を小さい順に並べて: 3,1,2",
+            "expected": "1,2,3",
+            "actual": "1,2,4"
+          }
+        ]
       },
       "math": {
         "ok": 10,
@@ -57,23 +63,18 @@
         "fails": []
       },
       "unseen30": {
-        "ok": 26,
+        "ok": 27,
         "total": 30,
         "fails": [
           {
             "prompt": "PythonでGoodを表示して",
             "expected": "print(\"Good\")",
-            "actual": "print(\"rue)"
+            "actual": "print(\"Toooot)"
           },
           {
-            "prompt": "Pythonで空リストを返して",
-            "expected": "return []",
-            "actual": "items = []"
-          },
-          {
-            "prompt": "PythonでFalseを表示して",
-            "expected": "print(False)",
-            "actual": "print(\"Hello\")"
+            "prompt": "数字を小さい順に並べて: 4,1,3",
+            "expected": "1,3,4",
+            "actual": "1,4,4"
           },
           {
             "prompt": "数字を小さい順に並べて: 9,7,8",
@@ -86,8 +87,8 @@
   },
   "train": {
     "lr": 3.5e-06,
-    "updates": 112,
-    "mean_loss": 0.07451023301191384
+    "updates": 118,
+    "mean_loss": 0.09174711823343926
   },
   "promoted": false,
   "gpt1_claim": false,
